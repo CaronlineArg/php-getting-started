@@ -1,30 +1,3 @@
-<?php
-
-require('../vendor/autoload.php');
-
-$app = new Silex\Application();
-$app['debug'] = true;
-
-// Register the monolog logging service
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-  'monolog.logfile' => 'php://stderr',
-));
-
-// Register view rendering
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
-
-// Our web handlers
-
-$app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
-});
-
-$app->run();
-
-echo <<<EOT
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,11 +90,11 @@ echo <<<EOT
 
                     <div class="carousel-inner ">
                         <div class="carousel-item active">
-                            <img src="images/ticket1.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/ticket1.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                             
                         </div>
                         <div class="carousel-item">
-                            <img src="images/ticket2.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/ticket2.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div>
                         <div class="container ">
                             <div class="carousel-caption ">
@@ -157,25 +130,25 @@ echo <<<EOT
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/p1.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/p1.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div>
                         <div class="carousel-item">
-                            <img src="images/p2.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/p2.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div>
                         <div class="carousel-item">
-                            <img src="images/p4.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/p4.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div> 
                         <div class="carousel-item">
-                            <img src="images/p5.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/p5.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div> 
                         <div class="carousel-item">
-                            <img src="images/p6.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/p6.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div>
                         <div class="carousel-item">
-                            <img src="images/p7.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/p7.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div>  
                         <div class="carousel-item">
-                            <img src="images/p8.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/p8.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div> 
                     </div>
 
@@ -205,11 +178,11 @@ echo <<<EOT
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/face-econ.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/face-econ.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                             
                         </div>
                         <div class="carousel-item">
-                            <img src="images/insta-econ.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
+                            <img src="img/insta-econ.png" class="bd-placeholder-img" width="100%" height="100%"  focusable="false"><rect width="100%" height="100%" fill="#777"/>
                         </div>
                         <div class="container">
                             <div class="carousel-caption p-0">
@@ -294,4 +267,3 @@ echo <<<EOT
     
 </body>
 </html>
-EOT;
